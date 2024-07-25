@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-formulaire-admin',
   standalone: true,
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './formulaire-admin.component.html',
   styleUrl: './formulaire-admin.component.css'
 })

@@ -22,17 +22,18 @@ import { FormulaireAeroportComponent } from './components/mes_formulaire/formula
 import { FormulaireReponsesFaqComponent } from './components/mes_formulaire/formulaire-reponses-faq/formulaire-reponses-faq.component';
 import { FormulaireSiegeComponent } from './components/mes_formulaire/formulaire-siege/formulaire-siege.component';
 import { FormulaireAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-avion.component';
+import {AuthGuardService} from "./services/auth-guard.service";
 
 export const routes: Routes = [
-    // {path: "", redirectTo: "/connexion", pathMatch:"full"},
-    {path:"accueil",title:"accueil",component:AccueilComponent},
-    {path:"avion",title:"avion",component:AvionComponent},
-    {path:"aeroport",title:"aeroport",component:AeroportComponent},
-    {path:"faq",title:"faq",component:FaqComponent},
-    {path:"parametre",title:"parametre",component:ParametreComponent},
-    {path:"passager",title:"passager",component:PassagerComponent},
-    {path:"personnel",title:"personnels",component:PersonnelsComponent},
-    {path:"siege",title:"siege",component:SiegeComponent},
+     {path: "", redirectTo: "/connexion", pathMatch:"full"},
+    {path:"accueil",title:"accueil",component:AccueilComponent, canActivate: [AuthGuardService]},
+    {path:"avion",title:"avion",component:AvionComponent, canActivate: [AuthGuardService]},
+    {path:"aeroport",title:"aeroport",component:AeroportComponent, canActivate: [AuthGuardService]},
+    {path:"faq",title:"faq",component:FaqComponent, canActivate: [AuthGuardService]},
+    {path:"parametre",title:"parametre",component:ParametreComponent, canActivate: [AuthGuardService]},
+    {path:"passager",title:"passager",component:PassagerComponent, canActivate: [AuthGuardService]},
+    {path:"personnel",title:"personnels",component:PersonnelsComponent, canActivate: [AuthGuardService]},
+    {path:"siege",title:"siege",component:SiegeComponent, canActivate: [AuthGuardService]},
     {path:"vol",title:"vol",component:VolComponent},
     {path:"compagnie",title:"compagnie",component:CompagnieComponent},
     {path:"connexion",title:"connexion",component:PageConnexionComponent},
