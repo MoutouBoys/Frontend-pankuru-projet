@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './formulaire-admin.component.css'
 })
 export class FormulaireAdminComponent {
+  modifier = 'src\assets\images\modifier.png';
+  corbeille = 'src\assets\images\corbeille.png';
 }

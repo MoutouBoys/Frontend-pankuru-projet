@@ -9,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './formulaire-avion.component.css'
 })
 export class FormulaireAvionComponent {
+  modifier = 'src\assets\images\modifier.png';
+  corbeille = 'src\assets\images\corbeille.png';
 
 }
