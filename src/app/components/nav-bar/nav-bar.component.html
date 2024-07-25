@@ -1,6 +1,6 @@
 <nav class="app-nav-bar">
     <div>
-        <a routerLink="/accueil">
+        <a routerLink="/formulaireAdmin">
             <img [ngSrc]="logo1" alt="logo" width="130" height="130">
         </a>
     </div>
@@ -33,10 +33,6 @@
             <i class="fa-solid fa-plane"></i>
             <a routerLink="/avion">Avions</a>
         </div>
-        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'parametres'}" (click)="selectItem('parametres')">
-            <i class="fa-solid fa-gear"></i>
-            <a routerLink="/parametre">Paramètres</a>
-        </div>
         <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'faq'}" (click)="selectItem('faq')">
             <i class="fa-solid fa-question"></i>
             <a routerLink="/faq">Faq</a>
@@ -45,5 +41,15 @@
             <i class="fa-solid fa-house-signal"></i>
             <a routerLink="/siege">Sieges</a>
         </div> 
+        <div class="nav_bar-bottom">
+            <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'parametres'}" (click)="selectItem('parametres')">
+                <i class="fa-solid fa-gear"></i>
+                <a routerLink="/parametre">Paramètres</a>
+            </div>
+            <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'parametres'}" (click)="selectItem('parametres')">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <a routerLink="/parametre">Login</a>
+            </div>
+        </div>
     </div>
 </nav>

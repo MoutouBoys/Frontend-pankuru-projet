@@ -1,6 +1,9 @@
 import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Chart, ChartConfiguration, ChartItem, ChartTypeRegistry, registerables } from 'chart.js';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { RechercheComponent } from '../recherche/recherche.component';
+import { ConteneurBodyRechercheComponent } from '../conteneur-body-recherche/conteneur-body-recherche.component';
 
 Chart.register(...registerables);
 
@@ -12,7 +15,9 @@ declare global {
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.css']
+  styleUrls: ['./accueil.component.css'],
+  standalone: true,
+  imports: [NavBarComponent, RechercheComponent, ConteneurBodyRechercheComponent]
 })
 export class AccueilComponent implements AfterViewInit {
   isBrowser: boolean;

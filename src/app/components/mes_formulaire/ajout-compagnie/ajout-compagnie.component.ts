@@ -4,13 +4,15 @@ import { NavBarComponent } from '../../nav-bar/nav-bar.component';
 import { RechercheComponent } from '../../recherche/recherche.component';
 
 @Component({
-  selector: 'app-formulaire-pays-ville',
+  selector: 'app-ajout-compagnie',
   standalone: true,
   imports: [NgOptimizedImage, NavBarComponent, RechercheComponent],
-  templateUrl: './formulaire-pays-ville.component.html',
-  styleUrl: './formulaire-pays-ville.component.css'
+  templateUrl: './ajout-compagnie.component.html',
+  styleUrl: './ajout-compagnie.component.css'
 })
-export class FormulairePaysVilleComponent {
+export class AjoutCompagnieComponent {
   faq: string= "assets/images/faq.svg";
   faq_icon: string= "assets/images/faq 1.png";
+  mask: string= "assets/images/Mask.png";
+  maison: string= "assets/images/maison.png";
 }
