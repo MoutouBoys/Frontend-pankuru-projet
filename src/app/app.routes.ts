@@ -21,6 +21,7 @@ import { FormulaireAeroportComponent } from './components/mes_formulaire/formula
 import { FormulaireReponsesFaqComponent } from './components/mes_formulaire/formulaire-reponses-faq/formulaire-reponses-faq.component';
 import { FormulaireSiegeComponent } from './components/mes_formulaire/formulaire-siege/formulaire-siege.component';
 import { FormulaireAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-avion.component';
+import {AuthGuardService} from "./services/auth-guard.service";
 
 export const routes: Routes = [
     {path: "", redirectTo: "/connexion", pathMatch:"full"},
