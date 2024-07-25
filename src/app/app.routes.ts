@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AeroportComponent } from './components/aeroport/aeroport.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { AvionComponent } from './components/avion/avion.component';
@@ -11,7 +10,7 @@ import { SiegeComponent } from './components/siege/siege.component';
 import { VolComponent } from './components/vol/vol.component';
 import { CompagnieComponent } from './components/compagnie/compagnie.component';
 import { PageConnexionComponent } from './components/page_inscription_connexion/page-connexion/page-connexion.component';
-import { AjoutCompagnieComponent } from './components/under_page/ajout-compagnie/ajout-compagnie.component';
+import { AjoutCompagnieComponent } from './components/mes_formulaire/ajout-compagnie/ajout-compagnie.component';
 import { FormulaireAdminComponent } from './components/mes_formulaire/formulaire-admin/formulaire-admin.component';
 import { FormulaireVolsComponent } from './components/mes_formulaire/formulaire-vols/formulaire-vols.component';
 import { FormulairePassagerComponent } from './components/mes_formulaire/formulaire-passager/formulaire-passager.component';
@@ -25,15 +24,15 @@ import { FormulaireAvionComponent } from './components/mes_formulaire/formulaire
 import {AuthGuardService} from "./services/auth-guard.service";
 
 export const routes: Routes = [
-     {path: "", redirectTo: "/connexion", pathMatch:"full"},
-    {path:"accueil",title:"accueil",component:AccueilComponent, canActivate: [AuthGuardService]},
-    {path:"avion",title:"avion",component:AvionComponent, canActivate: [AuthGuardService]},
-    {path:"aeroport",title:"aeroport",component:AeroportComponent, canActivate: [AuthGuardService]},
-    {path:"faq",title:"faq",component:FaqComponent, canActivate: [AuthGuardService]},
-    {path:"parametre",title:"parametre",component:ParametreComponent, canActivate: [AuthGuardService]},
-    {path:"passager",title:"passager",component:PassagerComponent, canActivate: [AuthGuardService]},
-    {path:"personnel",title:"personnels",component:PersonnelsComponent, canActivate: [AuthGuardService]},
-    {path:"siege",title:"siege",component:SiegeComponent, canActivate: [AuthGuardService]},
+    {path: "", redirectTo: "/connexion", pathMatch:"full"},
+    {path:"accueil",title:"accueil",component:AccueilComponent},
+    {path:"avion",title:"avion",component:AvionComponent},
+    {path:"aeroport",title:"aeroport",component:AeroportComponent},
+    {path:"faq",title:"faq",component:FaqComponent},
+    {path:"parametre",title:"parametre",component:ParametreComponent},
+    {path:"passager",title:"passager",component:PassagerComponent},
+    {path:"personnel",title:"personnels",component:PersonnelsComponent},
+    {path:"siege",title:"siege",component:SiegeComponent},
     {path:"vol",title:"vol",component:VolComponent},
     {path:"compagnie",title:"compagnie",component:CompagnieComponent},
     {path:"connexion",title:"connexion",component:PageConnexionComponent},

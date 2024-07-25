@@ -3,11 +3,12 @@
     justify-content: space-between;
     padding: 20px;
 }
-.content_fag_code{
+.content-all-form{
     background-color: white;
-    margin-top: 60px;
+    margin-top: 10px;
+    padding-top: 35px;
     border-radius: 10px;
-    padding-top: 20px;
+    padding-bottom: 25px;
 }
 .title-container{
     display: flex;
@@ -35,10 +36,25 @@ button{
     color: white;
     margin-top: 10px;
     padding: 10px 10px 10px 10px;
-    font-weight: 600;
 }
-button:hover{
-    background-color: #04BBC7;
-    color: white;
-    cursor: pointer;
+.container-rigth{
+    background-color: rgb(202, 202, 202);
+    border-radius: 50%;
+    padding: 100px;
+    position: relative;
+}
+
+/* Titre Page */
+
+.titre-ajout-compagnie{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px 0px 15px 0px;
+}
+.titre-ajout-compagnie h1{
+    margin-right: 20px;
 }

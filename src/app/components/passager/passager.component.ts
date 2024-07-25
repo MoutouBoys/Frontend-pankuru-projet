@@ -3,11 +3,15 @@ import { TitltePassagersComponent } from '../mini_components/passagers/titlte-pa
 import { PassagersConteneurComponent } from '../mini_components/passagers/passagers-conteneur/passagers-conteneur.component';
 import { ListPassagersComponent } from '../mini_components/passagers/list-passagers/list-passagers.component';
 import { NgOptimizedImage } from '@angular/common';
+import { NavBarComponent } from '../nav-bar/nav-bar.component';
+import { RechercheComponent } from '../recherche/recherche.component';
 
 @Component({
   selector: 'app-passager',
   standalone: true,
-  imports: [NgOptimizedImage,TitltePassagersComponent, PassagersConteneurComponent, ListPassagersComponent],
+  imports: [NgOptimizedImage,TitltePassagersComponent, PassagersConteneurComponent, ListPassagersComponent, 
+    NavBarComponent, RechercheComponent
+  ],
   templateUrl: './passager.component.html',
   styleUrl: './passager.component.css'
 })
