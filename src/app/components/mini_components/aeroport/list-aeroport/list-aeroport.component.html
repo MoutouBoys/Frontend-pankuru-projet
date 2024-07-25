@@ -30,17 +30,19 @@
             </tr>
           </thead>
           <tbody>
+            @for (aeroport of Aeroports; track aeroport.id) {
             <tr>
-              <td>Alice Bob</td>
-              <td>Alice Bob</td>
-              <td>9468</td>
-              <td>9468</td>
-              <td>9468</td>
-              <td>9468</td>
-              <td>Vol Dakar->Bamako</td>
+              <td>{{aeroport.nom}}</td>
+              <td>{{aeroport.codeIATA}}</td>
+              <td>{{aeroport.longitude}}</td>
+              <td>{{aeroport.latitude}}</td>
+              <td>{{aeroport.altitude}}</td>
+              <td>{{aeroport.capacite}}</td>
+              <td>{{aeroport.nbreDePistes}}</td>
               <td><i class="fa-solid fa-trash btn_action_two" ></i></td>
               <td><i class="fa-solid fa-pen btn_action_one"></i></td>
             </tr>
+          }
           </tbody>
         </table>
     </div>
