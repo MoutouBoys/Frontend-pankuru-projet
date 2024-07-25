@@ -28,15 +28,15 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr *ngFor="let p of passagerList">
               <td>
-                id#81287531
+                {{p.id}}
               </td>
-              <td>Alice Bob</td>
-              <td>9468</td>
-              <td>Vol Dakar->Bamako</td>
-              <td>Vol Dakar->Bamako</td>
-              <td><i class="fa-solid fa-trash btn_action_two" ></i></td>
+              <td>{{p.nom}}</td>
+              <td>{{p.prenom}}</td>
+              <td>{{p.numeroDePassPort}}</td>
+              <td>{{p.numeroDeVisa}}</td>
+              <td> <button class="btn_action_two" (click)="p.id !== undefined ? deletePassager(p.id) : null"><i class="fa-solid fa-trash"></i></button></td>
               <td><i class="fa-solid fa-pen btn_action_one"></i></td>
             </tr>
           </tbody>

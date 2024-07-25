@@ -18,23 +18,23 @@
         <table>
           <thead>
             <tr>
-              <th>Modèle</th>
-              <th>Nombre de places</th>
-              <th>Points de fidélité</th>
-              <th>Statut</th>
-              <th>Supprimer</th>
-              <th>Modifier</th>
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Matricule</th>
+              <th>Capacité Total</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr *ngFor="let p of avionListe">
               <td>
-                id#81287531
+                {{p.id}}
               </td>
-              <td>Alice Bob</td>
-              <td>9468</td>
-              <td>Vol Dakar->Bamako</td>
-              <td><i class="fa-solid fa-trash btn_action_two" ></i></td>
+              <td>{{p.nom}}</td>
+              <td>{{p.matricule}}</td>
+              <td>{{p.capaciteTotale}}</td>
+              <td>{{p.status}}</td>
+              <td><button class="btn_action_two" (click)="p.id !== undefined ? deleteAvion(p.id) : null"><i class="fa-solid fa-trash" ></i></button></td>
               <td><i class="fa-solid fa-pen btn_action_one"></i></td>
             </tr>
           </tbody>
