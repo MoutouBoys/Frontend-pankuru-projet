@@ -1,0 +1,16 @@
+.body_page{
+    height: 82%;
+    width: 100%;
+    background-color: rgb(172, 243, 255);
+    margin-top: 15px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.trois_conteneurs{
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.categoris_list_pers{
+    display: flex;
+}

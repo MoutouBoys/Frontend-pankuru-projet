@@ -1,0 +1,46 @@
+<div class="body_page">
+  <div style="display: flex;">
+    <div class="ajout_btn">
+      <img [ngSrc]="ajouter" alt="ajouer" width="20" height="20">
+      <h6><a href="" routerLink="/formulaireVols"> Ajouter un nouveau vol</a></h6>
+    </div>
+      <select name="" id="">
+        <optgroup>
+          <option value="Tous">Tous</option>
+          <option value="Tous">Pilotes</option>
+          <option value="Tous">Escortes</option>
+          <option value="Tous">Service de nettoyage</option>
+        </optgroup>
+      </select>
+      <input type="date">
+  </div>
+    <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Numéro</th>
+              <th>AéroportDepart</th>
+              <th>AéroportArrivee</th>
+              <th>Status</th>
+              <th>DateDépart</th>
+              <th>DateArrivee</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Mamoutou
+              </td>
+              <td>Pilote</td>
+              <td>Pilote</td>
+              <td>Pilote</td>
+              <td>Pilote</td>
+              <td>Pilote</td>
+                <i class="fa-solid fa-trash btn_action_two" ></i>
+                <i class="fa-solid fa-pen btn_action_one"></i>  
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

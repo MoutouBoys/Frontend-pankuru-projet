@@ -1,0 +1,47 @@
+<div class="body_page">
+    <div class="table-container">
+      <div style="display: flex;">
+        <div class="ajout_btn">
+          <img [ngSrc]="ajouter" alt="ajouer" width="20" height="20">
+          <h6><a href="" routerLink="/formulaireAeroport"> Ajouter Aéroport</a></h6>
+        </div>
+          <select name="" id="">
+            <optgroup>
+              <option value="Tous">Tous</option>
+              <option value="Tous">Pilotes</option>
+              <option value="Tous">Escortes</option>
+              <option value="Tous">Service de nettoyage</option>
+            </optgroup>
+          </select>
+          <input type="date">
+      </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Code IATA</th>
+              <th>Longitude</th>
+              <th>Latitude</th>
+              <th>Altitude</th>
+              <th>Capacité</th>
+              <th>Nbre de pistes</th>
+              <th>Supprimer</th>
+              <th>Modifier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice Bob</td>
+              <td>Alice Bob</td>
+              <td>9468</td>
+              <td>9468</td>
+              <td>9468</td>
+              <td>9468</td>
+              <td>Vol Dakar->Bamako</td>
+              <td><i class="fa-solid fa-trash btn_action_two" ></i></td>
+              <td><i class="fa-solid fa-pen btn_action_one"></i></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

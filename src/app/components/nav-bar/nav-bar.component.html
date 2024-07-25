@@ -1,0 +1,49 @@
+<nav class="app-nav-bar">
+    <div>
+        <a routerLink="/accueil">
+            <img [ngSrc]="logo1" alt="logo" width="130" height="130">
+        </a>
+    </div>
+    <div class="content_nav_link">
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'accueil'}" (click)="selectItem('accueil')">
+            <i class="fa-solid fa-house"></i>
+            <a routerLink="/accueil">Accueil</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'vols'}" (click)="selectItem('vols')">
+            <i class="fa-solid fa-plane"></i>
+            <a routerLink="/vol">Vols</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'personnels'}" (click)="selectItem('personnels')">
+            <i class="fa-solid fa-user"></i>
+            <a routerLink="/personnel">Personnels</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'aeroports'}" (click)="selectItem('aeroports')">
+            <i class="fa-solid fa-plane-departure"></i>
+            <a routerLink="/aeroport">Aéroports</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'compagnies'}" (click)="selectItem('compagnies')">
+            <i class="fa-solid fa-house-flag"></i>
+            <a routerLink="/compagnie">Compagnies</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'passagers'}" (click)="selectItem('passagers')">
+            <i class="fa-solid fa-users"></i>
+            <a routerLink="/passager">Passagers</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'avions'}" (click)="selectItem('avions')">
+            <i class="fa-solid fa-plane"></i>
+            <a routerLink="/avion">Avions</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'parametres'}" (click)="selectItem('parametres')">
+            <i class="fa-solid fa-gear"></i>
+            <a routerLink="/parametre">Paramètres</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'faq'}" (click)="selectItem('faq')">
+            <i class="fa-solid fa-question"></i>
+            <a routerLink="/faq">Faq</a>
+        </div>
+        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'sieges'}" (click)="selectItem('sieges')">
+            <i class="fa-solid fa-house-signal"></i>
+            <a routerLink="/siege">Sieges</a>
+        </div> 
+    </div>
+</nav>

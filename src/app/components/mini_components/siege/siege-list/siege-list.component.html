@@ -1,0 +1,45 @@
+<div class="body_page">
+    <div class="table-container">
+      <div style="display: flex;">
+        <div class="ajout_btn">
+          <img [ngSrc]="ajouter" alt="ajouer" width="20" height="20">
+          <h6><a href="" routerLink="/formulaireSiege"> Ajouter Siege</a></h6>
+        </div>
+          <select name="" id="">
+            <optgroup>
+              <option value="Tous">Tous</option>
+              <option value="Tous">Pilotes</option>
+              <option value="Tous">Escortes</option>
+              <option value="Tous">Service de nettoyage</option>
+            </optgroup>
+          </select>
+          <input type="date">
+      </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Numéro</th>
+              <th>Disponibilité</th>
+              <th>Position Siege</th>
+              <th>Passager</th>
+              <th>Supprimer</th>
+              <th>Madifier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                id#81287531
+              </td>
+              <td>Alice Bob</td>
+              <td>9468</td>
+              <td>Vol Dakar->Bamako</td>
+              <td>Vol Dakar->Bamako</td>
+              <td><img [ngSrc]="corbeille" alt="modifier" width="20" height="20" class="btn_action_one"></td>
+              <td><img [ngSrc]="modifier" alt="modifier" width="20" height="20" class="btn_action_two"></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

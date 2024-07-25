@@ -1,0 +1,36 @@
+.app-nav-bar {
+    width: 250px;
+    height: 93vh;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.nav_link img {
+    width: 40px;
+    height: 25px;
+}
+
+.nav_link a {
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
+
+.nav_link {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px 10px 50px;
+}
+
+.nav_link:hover {
+    background-color: #d4fcfc;
+    border-left: 5px solid rgb(3, 191, 216);
+    cursor: pointer;
+}
+
+.nav_link.selected {
+    background-color: #d4fcfc;
+    border-left: 5px solid rgb(3, 191, 216);
+}
