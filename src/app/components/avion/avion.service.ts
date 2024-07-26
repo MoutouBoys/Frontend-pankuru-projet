@@ -27,7 +27,7 @@ export class AvionService {
   }
   //modifier un Avion
   async updateAvion(avion:Avion):Promise<Avion>{
-    const data = await fetch(`${this.url}/modifier/${avion.id}`,{
+    const data = await fetch(`${this.url}/${avion.id}`,{
       method:'PUT',
       headers:{
          'Content-Type': 'application/json'
@@ -47,7 +47,8 @@ export class AvionService {
   
 // recuperer un avion par id
 async getAvionById(id:number):Promise<Avion>{
-  const data = await fetch(`${this.url}/liste/${id}`)
+  const data = await fetch(`${this.url}/${id}`)
+  console.log(data);
   return await data.json()?? [];
 }
 

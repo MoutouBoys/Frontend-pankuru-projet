@@ -15,7 +15,6 @@ export class FormulaireAvionComponent {
 
   }
   avionForm=new FormGroup({
-    id:new FormControl(''),
     nom:new FormControl(''),
     matricule:new FormControl(''),
     capaciteTotal:new FormControl(''),

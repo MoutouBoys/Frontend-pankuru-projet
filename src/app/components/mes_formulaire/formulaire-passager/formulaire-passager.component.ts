@@ -2,11 +2,12 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { PassagerService } from '../../passager/passager.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire-passager',
   standalone: true,
-  imports: [NgOptimizedImage,ReactiveFormsModule],
+  imports: [NgOptimizedImage,ReactiveFormsModule,RouterModule],
   templateUrl: './formulaire-passager.component.html',
   styleUrl: './formulaire-passager.component.css'
 })

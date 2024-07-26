@@ -4,5 +4,5 @@ export interface Avion {
     matricule:string;
     capaciteTotale:number;
     nom:string;
-    status:String
+    status:string
 }

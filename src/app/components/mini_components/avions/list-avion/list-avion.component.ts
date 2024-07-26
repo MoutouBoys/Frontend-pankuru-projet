@@ -18,11 +18,17 @@ export class ListAvionComponent {
   ajouter: string = "assets/images/Ajouter.png";
   avionListe:Avion[]=[];
   constructor( private avionService:AvionService){
-    this.avionService.getAllAvions().then((avionListe:Avion[])=>{
-      this.avionListe=avionListe;
-    })
-
+   this.loadAvion();
   }
+   async loadAvion() {
+    try {
+      this.avionListe = await this.avionService.getAllAvions();
+    } catch (error) {
+      console.error('Erreur lors de la récupération des avions :', error);
+    }
+    
+  }
+
   async deleteAvion(id:number):Promise<void>{
     if(confirm("vous voulez supprimer definitivement"))
     try {

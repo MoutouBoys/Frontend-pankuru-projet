@@ -22,7 +22,8 @@ import { FormulaireAeroportComponent } from './components/mes_formulaire/formula
 import { FormulaireReponsesFaqComponent } from './components/mes_formulaire/formulaire-reponses-faq/formulaire-reponses-faq.component';
 import { FormulaireSiegeComponent } from './components/mes_formulaire/formulaire-siege/formulaire-siege.component';
 import { FormulaireAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-avion.component';
-
+import { FormulaireUpdateAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-update-avion/formulaire-update-avion.component';
+import { RouterModule} from '@angular/router';
 export const routes: Routes = [
     // {path: "", redirectTo: "/connexion", pathMatch:"full"},
     {path:"accueil",title:"accueil",component:AccueilComponent},
@@ -47,4 +48,5 @@ export const routes: Routes = [
     {path:"formulaireReponsesFaq",title:"formulaireReponsesFaq",component:FormulaireReponsesFaqComponent},
     {path:"formulaireSiege",title:"formulaireSege",component:FormulaireSiegeComponent},
     {path:"formulaireAvion",title:"formulaireAvion",component:FormulaireAvionComponent},
+    { path: 'avion/update/:id', title: 'updateAvion', component: FormulaireUpdateAvionComponent }
 ];

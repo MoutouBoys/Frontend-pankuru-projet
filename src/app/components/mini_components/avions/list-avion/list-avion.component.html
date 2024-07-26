@@ -35,7 +35,7 @@
               <td>{{p.capaciteTotale}}</td>
               <td>{{p.status}}</td>
               <td><button class="btn_action_two" (click)="p.id !== undefined ? deleteAvion(p.id) : null"><i class="fa-solid fa-trash" ></i></button></td>
-              <td><i class="fa-solid fa-pen btn_action_one"></i></td>
+              <td><a class="btn_action_one"><i class="fa-solid fa-pen" [routerLink]="['/avion/update/',p.id]"></i></a></td>
             </tr>
           </tbody>
         </table>
