@@ -13,3 +13,4 @@ import { RechercheComponent } from '../../recherche/recherche.component';
 export class FormulaireAdminComponent {
 
 
+}
