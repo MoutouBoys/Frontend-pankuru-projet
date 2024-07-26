@@ -1,6 +1,8 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {Router, RouterLink, RouterOutlet} from '@angular/router';
+import {AuthService} from "../../services/auth.service";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Component({
   selector: 'app-recherche',
@@ -10,5 +12,28 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './recherche.component.css'
 })
 export class RechercheComponent {
+  private currentUserSubject: BehaviorSubject<any>;
+  public currentUser: Observable<any>;
+
+  constructor(private authService: AuthService, private router: Router) {
+    const storedUser = this.isBrowser() ? localStorage.getItem('currentUser') : null;
+    this.currentUserSubject = new BehaviorSubject<any>(storedUser ? JSON.parse(storedUser) : null);
+    this.currentUser = this.currentUserSubject.asObservable();
+  }
+
+  private isBrowser(): boolean {
+    return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
+  }
+
+  public get currentUserValue() {
+    return this.currentUserSubject.value;
+
+  }
+
+  getUsername(): string | null {
+    let user = this.currentUserSubject.value;
+    return user ? user.Nom + ' ' + user.Prenom : null;
+  }
+
   passagers: string = "assets/images/Profil.png";
 }

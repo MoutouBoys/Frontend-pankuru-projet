@@ -18,6 +18,12 @@
     margin-left: 20px;
 }
 
+.nav_link button {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+
 
 .nav_link {
     display: flex;

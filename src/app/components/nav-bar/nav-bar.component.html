@@ -5,7 +5,7 @@
         </a>
     </div>
     <div class="content_nav_link">
-        <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'accueil'}" (click)="selectItem('accueil')">
+        <div class="nav_link"  [ngClass]="{'selected': selectedNavItem === 'accueil'}" (click)="selectItem('accueil')">
             <i class="fa-solid fa-house"></i>
             <a routerLink="/accueil">Accueil</a>
         </div>
@@ -40,7 +40,7 @@
         <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'sieges'}" (click)="selectItem('sieges')">
             <i class="fa-solid fa-house-signal"></i>
             <a routerLink="/siege">Sieges</a>
-        </div> 
+        </div>
         <div class="nav_bar-bottom">
             <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'parametres'}" (click)="selectItem('parametres')">
                 <i class="fa-solid fa-gear"></i>
@@ -48,7 +48,7 @@
             </div>
             <div class="nav_link" [ngClass]="{'selected': selectedNavItem === 'parametres'}" (click)="selectItem('parametres')">
                 <i class="fa-solid fa-right-to-bracket"></i>
-                <a routerLink="/parametre">Login</a>
+                <a (click)="logout()" style="color: red">Déconnexion</a>
             </div>
         </div>
     </div>
