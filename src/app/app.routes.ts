@@ -20,7 +20,11 @@ import { FormulaireAeroportComponent } from './components/mes_formulaire/formula
 import { FormulaireReponsesFaqComponent } from './components/mes_formulaire/formulaire-reponses-faq/formulaire-reponses-faq.component';
 import { FormulaireSiegeComponent } from './components/mes_formulaire/formulaire-siege/formulaire-siege.component';
 import { FormulaireAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-avion.component';
+<<<<<<< HEAD
 import { AjoutCompagnieComponent } from './components/mes_formulaire/ajout-compagnie/ajout-compagnie.component';
+=======
+import {AuthGuardService} from "./services/auth-guard.service";
+>>>>>>> e440829141d305ce7448b73959d63c9ed53f3a81
 
 export const routes: Routes = [
     {path: "", redirectTo: "/connexion", pathMatch:"full"},

@@ -11,5 +11,5 @@ import { RechercheComponent } from '../../recherche/recherche.component';
   styleUrl: './formulaire-admin.component.css'
 })
 export class FormulaireAdminComponent {
- 
-}
+
+
