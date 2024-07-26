@@ -28,18 +28,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                Mamoutou
-              </td>
-              <td>Pilote</td>
-              <td>Pilote</td>
-              <td>Pilote</td>
-              <td>Pilote</td>
-              <td>Pilote</td>
-                <i class="fa-solid fa-trash btn_action_two" ></i>
-                <i class="fa-solid fa-pen btn_action_one"></i>  
-            </tr>
+            @for (vol of vols; track vol) {
+              <tr>
+                <td>{{vol.id}}</td>
+                <td>{{vol.numeroDeVol}}</td>
+                <td>{{vol.aeroportDepart}}</td>
+                <td> {{vol.aeroportArriver}} </td>
+                <td> {{vol.satut}}</td>
+                <td> {{vol.dateEtHeureArrivee}}</td>
+                <td>{{vol.dateEtHeureDepart}}</td>
+                  <i class="fa-solid fa-trash btn_action_two" ></i>
+                  <i class="fa-solid fa-pen btn_action_one"></i>  
+              </tr>
+            }
           </tbody>
         </table>
     </div>
