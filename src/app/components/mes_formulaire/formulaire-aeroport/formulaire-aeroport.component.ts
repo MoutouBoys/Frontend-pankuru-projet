@@ -42,7 +42,7 @@ export class FormulaireAeroportComponent implements OnInit{
         nombreDePistes: [''],
         logoCompagnie: [''],
         ville: this.fb.group({
-          id: [this.selectedVilleId]
+          id: [4]
         })
       });
 
