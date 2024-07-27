@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AeroportComponent } from './components/aeroport/aeroport.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { AvionComponent } from './components/avion/avion.component';
@@ -11,7 +10,6 @@ import { SiegeComponent } from './components/siege/siege.component';
 import { VolComponent } from './components/vol/vol.component';
 import { CompagnieComponent } from './components/compagnie/compagnie.component';
 import { PageConnexionComponent } from './components/page_inscription_connexion/page-connexion/page-connexion.component';
-import { AjoutCompagnieComponent } from './components/under_page/ajout-compagnie/ajout-compagnie.component';
 import { FormulaireAdminComponent } from './components/mes_formulaire/formulaire-admin/formulaire-admin.component';
 import { FormulaireVolsComponent } from './components/mes_formulaire/formulaire-vols/formulaire-vols.component';
 import { FormulairePassagerComponent } from './components/mes_formulaire/formulaire-passager/formulaire-passager.component';
@@ -22,9 +20,14 @@ import { FormulaireAeroportComponent } from './components/mes_formulaire/formula
 import { FormulaireReponsesFaqComponent } from './components/mes_formulaire/formulaire-reponses-faq/formulaire-reponses-faq.component';
 import { FormulaireSiegeComponent } from './components/mes_formulaire/formulaire-siege/formulaire-siege.component';
 import { FormulaireAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-avion.component';
+<<<<<<< HEAD
+import { AjoutCompagnieComponent } from './components/mes_formulaire/ajout-compagnie/ajout-compagnie.component';
+=======
+import {AuthGuardService} from "./services/auth-guard.service";
+>>>>>>> e440829141d305ce7448b73959d63c9ed53f3a81
 
 export const routes: Routes = [
-    // {path: "", redirectTo: "/connexion", pathMatch:"full"},
+    {path: "", redirectTo: "/connexion", pathMatch:"full"},
     {path:"accueil",title:"accueil",component:AccueilComponent},
     {path:"avion",title:"avion",component:AvionComponent},
     {path:"aeroport",title:"aeroport",component:AeroportComponent},

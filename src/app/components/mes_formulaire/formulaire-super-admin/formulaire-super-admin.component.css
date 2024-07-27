@@ -2,7 +2,10 @@
     background-color: red;
 }
 .body_page{
-    background-color: 04BBC7;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
 }
 .container-left{
     background-color: #04BBC7;

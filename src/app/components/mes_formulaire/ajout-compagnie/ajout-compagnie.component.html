@@ -1,37 +1,41 @@
 <div class="body_page">
     <app-nav-bar></app-nav-bar>
-
     <div style="width: 78%;">
         <app-recherche></app-recherche>
-        <br>
-        <div class="content_fag_code">
-            <div class="title-container">
-                <h1>FAQ</h1>
-                <img [ngSrc]="faq_icon" alt="faq_icon" width="30" height="30">
-            </div>
+        <div class="titre-ajout-compagnie">
+            <h1>Ajout d’une compagnie</h1>
+            <img [ngSrc]="maison" alt="maison" width="40" height="30">
+        </div>
+        <div class="content-all-form">
             <div class="form_img_flex">
+                <div class="container-rigth">
+                    <img [ngSrc]="mask" alt="mask" width="80" height="80">
+                </div>
                 <div class="container-left">
                     <h1>Formulaire</h1>
                     <br>
                     <div>
-                        <h4> Catégorie de la question</h4>
+                        <h4>Nom de la compagnie</h4>
                         <input type="text" name="" id="">
                     </div>
                     <br>
                     <div>
-                        <h4>Message</h4>
+                        <h4>Description</h4>
                         <input type="text" name="" id="">
                     </div>
                     <br>
                     <div>
-                        <h4>Id Admin</h4>
+                        <h4>Adresse</h4>
+                        <input type="text" name="" id="">
+                    </div>
+                    <br>
+                    <div>
+                        <h4>Mot de passe</h4>
                         <input type="text" name="" id="">
                     </div>
                     <button type="submit">Envoyer</button>
                 </div>
-                <div class="container-rigth">
-                    <img [ngSrc]="faq" alt="faq" width="350" height="350">
-                </div>
+                
             </div>
         </div>
     </div>
