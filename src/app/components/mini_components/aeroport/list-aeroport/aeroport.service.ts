@@ -9,8 +9,8 @@ export interface Aeroport {
   longitude: number;
   latitude: number;
   altitude: number;
-  capacite: number;
-  nbreDePistes: number;
+  capaciteParking: number;
+  nombreDePistes: number;
 }
 
 @Injectable({

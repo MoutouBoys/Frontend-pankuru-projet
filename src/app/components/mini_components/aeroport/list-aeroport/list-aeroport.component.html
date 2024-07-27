@@ -37,13 +37,92 @@
               <td>{{aeroport.longitude}}</td>
               <td>{{aeroport.latitude}}</td>
               <td>{{aeroport.altitude}}</td>
-              <td>{{aeroport.capacite}}</td>
-              <td>{{aeroport.nbreDePistes}}</td>
-              <td><i class="fa-solid fa-trash btn_action_two" ></i></td>
-              <td><i class="fa-solid fa-pen btn_action_one"></i></td>
+              <td>{{aeroport.capaciteParking}}</td>
+              <td>{{aeroport.nombreDePistes}}</td>
+              <td>
+                <button class="fa-solid fa-trash btn_action_two" (click)="supprimerAeroport(aeroport.id)"></button>
+              </td>
+              <td>
+                <button class="fa-solid fa-pen btn_action_one" (click)="ouvrirModalModification(aeroport)"></button>
+              </td>
             </tr>
           }
           </tbody>
         </table>
     </div>
+</div>
+<!--Page modale pour la modification-->
+<div class="modal" [ngClass]="{ 'is-active': modalIsOpen }">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modifier l'aéroport</p>
+      <button class="delete" aria-label="close" (click)="fermerModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <form [formGroup]="formModification">
+        <div class="formulaire-admin-list">
+          <div class="">
+            <div class="content-flex-form">
+              <div class="margin-top-div">
+                <label for="nom">Nom de l'aéroport :</label>
+                <input type="text"  id="nom" formControlName="nom">
+              </div>
+              <div class="margin-top-div">
+                <label for="codeIATA">Code IATA :</label>
+                <input type="text"  id="codeIATA" formControlName="codeIATA">
+              </div>
+            </div>
+            <div class="content-flex-form">
+              <div class="margin-top-div">
+                <label for="longitude">Longitude :</label>
+                <input type="text"  id="longitude" formControlName="longitude">
+              </div>
+              <div class="margin-top-div">
+                <label for="latitude">Latitude :</label>
+                <input type="text"  id="latitude" formControlName="latitude">
+              </div>
+            </div>
+            <div class="content-flex-form">
+              <div class="margin-top-div">
+                <label for="altitude">Altitude :</label>
+                <input type="text"  id="altitude" formControlName="altitude">
+              </div>
+              <div class="margin-top-div">
+                <label for="altitude">Capacité Parking :</label>
+                <input type="text"  id="capaciteParking" formControlName="capaciteParking">
+              </div>
+            </div>
+            <div class="content-flex-form">
+              <div class="margin-top-div">
+                <label for="altitude">Nombre de pistes :</label>
+                <input type="text"  id="nombreDePistes" formControlName="nombreDePistes">
+              </div>
+              <div class="margin-top-div">
+                <label for="ville.id">Nom Ville :</label>
+                <select id="ville.id" formControlName="ville.id">
+                  @for (ville of villes; track ville.id) {
+                    <option value="{{ville.id}}">{{ville.nom}}</option>
+                  }
+                </select>
+              </div>
+            </div>
+            <div class="content-flex-form">
+              <div class="margin-top-div">
+                <label for="logoCompagnie">Logo Compagnie</label>
+                <input type="file" id="logoCompagnie" formControlName="logoCompagnie">
+              </div>
+            </div>
+          </div>
+          <!--<div class="btn_enregistrement">
+            <button type="submit">Envoyer</button>
+          </div>-->
+        </div>
+      </form>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" (click)="enregistrerModifications()">Enregistrer</button>
+      <button class="button" (click)="fermerModal()">Annuler</button>
+    </footer>
+  </div>
 </div>

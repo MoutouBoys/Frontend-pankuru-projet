@@ -21,7 +21,7 @@ import { FormulairePaysVilleComponent } from './components/mes_formulaire/formul
 import { FormulaireAeroportComponent } from './components/mes_formulaire/formulaire-aeroport/formulaire-aeroport.component';
 import { FormulaireReponsesFaqComponent } from './components/mes_formulaire/formulaire-reponses-faq/formulaire-reponses-faq.component';
 import { FormulaireSiegeComponent } from './components/mes_formulaire/formulaire-siege/formulaire-siege.component';
-import { FormulaireAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-avion.component';
+import {FormulaireAvionComponent} from "./components/mes_formulaire/formulaire-avion/formulaire-avion.component";
 
 export const routes: Routes = [
     // {path: "", redirectTo: "/connexion", pathMatch:"full"},
