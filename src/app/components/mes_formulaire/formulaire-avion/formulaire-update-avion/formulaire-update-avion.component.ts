@@ -34,30 +34,31 @@ export class FormulaireUpdateAvionComponent implements OnInit {
     this.loadAvion();
   }
 
-  loadAvion() {
+  async loadAvion() {
     if (this.id !== null && this.id !== undefined) {  // Assurez-vous que `id` n'est ni `null` ni `undefined`
-      this.avionService.getAvionById(this.id)
-        .then(avion => {
-          // Assurez-vous que `avion` n'est pas `undefined`
-          if (avion) {
-            this.updateAvionForm.patchValue({
-              id: avion.id !== undefined ? avion.id.toString() : '',  // Convertir en string ou utiliser une valeur par défaut
-              nom: avion.nom ?? '',  // Utiliser le nullish coalescing operator pour fournir une valeur par défaut
-              matricule: avion.matricule ?? '',  // Fournir une valeur par défaut si `matricule` est `null` ou `undefined`
-              capaciteTotal: avion.capaciteTotale !== undefined ? avion.capaciteTotale.toString() : '',  // Convertir en string
-              status: avion.status ?? ''  // Fournir une valeur par défaut si `status` est `null` ou `undefined`
-            });
-          } else {
-            console.error('L\'avion récupéré est indéfini');
-          }
-        })
-        .catch(error => {
-          console.error('Erreur lors de la récupération de l\'avion :', error);
-        });
+      try {
+        const avion = await this.avionService.getAvionById(this.id);
+        
+        // Assurez-vous que `avion` n'est pas `undefined`
+        if (avion) {
+          this.updateAvionForm.patchValue({
+            id: avion.id !== undefined ? avion.id.toString() : '',  // Convertir en string ou utiliser une valeur par défaut
+            nom: avion.nom ?? '',  // Utiliser le nullish coalescing operator pour fournir une valeur par défaut
+            matricule: avion.matricule ?? '',  // Fournir une valeur par défaut si `matricule` est `null` ou `undefined`
+            capaciteTotal: avion.capaciteTotale !== undefined ? avion.capaciteTotale.toString() : '',  // Convertir en string
+            status: avion.status ?? ''  // Fournir une valeur par défaut si `status` est `null` ou `undefined`
+          });
+        } else {
+          console.error('L\'avion récupéré est indéfini');
+        }
+      } catch (error) {
+        console.error('Erreur lors de la récupération de l\'avion :', error);
+      }
     } else {
       console.error('ID est nul ou indéfini');
     }
   }
+  
 
   async UpdateSubmitAvion(): Promise<void> {
     console.warn(this.updateAvionForm.value);
@@ -73,7 +74,7 @@ export class FormulaireUpdateAvionComponent implements OnInit {
       id: this.id,
       nom: formValues.nom || '',  // Valeur par défaut si null ou undefined
       matricule: formValues.matricule || '',  // Valeur par défaut si null ou undefined
-      capaciteTotale: capaciteTotal, // Assurez-vous que le nom et le type correspondent
+      capaciteTotale: capaciteTotal, 
       status: formValues.status || ''  // Valeur par défaut si null ou undefined
     };
   

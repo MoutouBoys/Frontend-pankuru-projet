@@ -2,17 +2,18 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { PassagerService } from '../../passager/passager.service';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-formulaire-passager',
   standalone: true,
-  imports: [NgOptimizedImage,ReactiveFormsModule,RouterModule],
+  imports: [NgOptimizedImage,ReactiveFormsModule],
   templateUrl: './formulaire-passager.component.html',
   styleUrl: './formulaire-passager.component.css'
 })
 export class FormulairePassagerComponent {
-  constructor(private passagerService:PassagerService){}
+  constructor(private passagerService:PassagerService,private route:ActivatedRoute,private router:Router){}
   passagerForm= new FormGroup({
     nom:new FormControl(''),
     prenom:new FormControl(''),
@@ -31,6 +32,8 @@ export class FormulairePassagerComponent {
       });
       alert("Passager ajouté avec succès")
       this.passagerForm.reset();
+      this.router.navigate(['/passager']);
+      
     } catch (error) {
       console.error("Erreur lors de l'ajout du passager:",error)
       

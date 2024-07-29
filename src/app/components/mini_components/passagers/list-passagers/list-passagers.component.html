@@ -23,8 +23,9 @@
               <th>Prenom</th>
               <th>NumeroDePasseport</th>
               <th>NumeroDeVisa</th>
-              <th>Supprimer</th>
-              <th>Modifier</th>
+              <th>Reservation</th>
+              <th>Siege</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -36,8 +37,11 @@
               <td>{{p.prenom}}</td>
               <td>{{p.numeroDePassPort}}</td>
               <td>{{p.numeroDeVisa}}</td>
+              <td>{{p.reservation?.id}}</td>
+              <td>{{p.siege?.numero}}</td>
+              <td></td>
               <td> <button class="btn_action_two" (click)="p.id !== undefined ? deletePassager(p.id) : null"><i class="fa-solid fa-trash"></i></button></td>
-              <td><i class="fa-solid fa-pen btn_action_one"></i></td>
+              <td><button class="btn_action_one" [routerLink]="['/passager/update',p.id]"><i class="fa-solid fa-pen"></i></button></td>
             </tr>
           </tbody>
         </table>

@@ -4,5 +4,11 @@ export interface Avion {
     matricule:string;
     capaciteTotale:number;
     nom:string;
-    status:string
+    status:string;
+    compagnie?:Compagnie;
+  
+}
+export interface Compagnie{
+    id?:number;
+    nom?:string;
 }

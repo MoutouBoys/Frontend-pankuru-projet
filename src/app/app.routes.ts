@@ -24,6 +24,7 @@ import { FormulaireSiegeComponent } from './components/mes_formulaire/formulaire
 import { FormulaireAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-avion.component';
 import { FormulaireUpdateAvionComponent } from './components/mes_formulaire/formulaire-avion/formulaire-update-avion/formulaire-update-avion.component';
 import { RouterModule} from '@angular/router';
+import { FormulaireUpdatePassagerComponent } from './components/mes_formulaire/formulaire-passager/formulaire-update-passager/formulaire-update-passager.component';
 export const routes: Routes = [
     // {path: "", redirectTo: "/connexion", pathMatch:"full"},
     {path:"accueil",title:"accueil",component:AccueilComponent},
@@ -48,5 +49,6 @@ export const routes: Routes = [
     {path:"formulaireReponsesFaq",title:"formulaireReponsesFaq",component:FormulaireReponsesFaqComponent},
     {path:"formulaireSiege",title:"formulaireSege",component:FormulaireSiegeComponent},
     {path:"formulaireAvion",title:"formulaireAvion",component:FormulaireAvionComponent},
-    { path: 'avion/update/:id', title: 'updateAvion', component: FormulaireUpdateAvionComponent }
+    { path: 'avion/update/:id', title: 'updateAvion', component: FormulaireUpdateAvionComponent },
+    {path:'passager/update/:id',title:'updatePassager',component:FormulaireUpdatePassagerComponent}
 ];
