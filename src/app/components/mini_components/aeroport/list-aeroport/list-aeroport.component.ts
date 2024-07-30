@@ -22,11 +22,10 @@ export class ListAeroportComponent implements OnInit{
 
   villes : any[] = [];
   Aeroports: Aeroport[] = [];
-  private apiUrlVille = "http://localhost:8080/ville/afficher";
 
   modalIsOpen = false;
+  aeroportModifier!: FormGroup;
   aeroportAModifier!: Aeroport;
-  formModification!: FormGroup;
 
   constructor(private aeroportService : AeroportService,
               private http : HttpClient,
@@ -39,7 +38,7 @@ export class ListAeroportComponent implements OnInit{
     });
 
     //Modification Aeroport formulaire
-    this.formModification = this.fb.group({
+    this.aeroportModifier = this.fb.group({
       nom: [''],
       codeIATA: [''],
       longitude: [''],
@@ -47,14 +46,11 @@ export class ListAeroportComponent implements OnInit{
       altitude: [''],
       capaciteParking: [''],
       nombreDePistes: [''],
-      logoCompagnie: [''],
-      /*ville: this.fb.group({
-        id: ['']
-      })*/
+      ville: ['']
     });
 
     //Afficher la liste des villes dans la liste deroulante
-    this.http.get<any[]>(this.apiUrlVille).subscribe((data) => {
+    this.aeroportService.getVille().subscribe((data) => {
       this.villes = data;
       //console.log(this.villes);
     });
@@ -80,26 +76,42 @@ export class ListAeroportComponent implements OnInit{
 
   ouvrirModalModification(aeroport: Aeroport) {
     this.aeroportAModifier = aeroport;
-    this.formModification.patchValue(aeroport);
+    this.aeroportModifier.patchValue({
+      nom: aeroport.nom,
+      codeIATA: aeroport.codeIATA,
+      longitude: aeroport.longitude,
+      latitude: aeroport.latitude,
+      altitude: aeroport.altitude,
+      capaciteParking: aeroport.capaciteParking,
+      nombreDePistes: aeroport.nombreDePistes,
+      ville: aeroport.ville ? aeroport.ville.id : null  // Assurez-vous que la ville est correctement définie
+    });
     this.modalIsOpen = true;
   }
+
   //fermer modale
   fermerModal() {
     this.modalIsOpen = false;
   }
 
   enregistrerModifications() {
-    const aeroportModifie = this.aeroportAModifier;//venant de la liste des aeroports lorsqu'il est selectionné
-    const aeroportData = this.formModification.value;//venant du formulaire
-    aeroportModifie.nom = aeroportData.nom;
-    aeroportModifie.codeIATA = aeroportData.codeIATA;
-    aeroportModifie.longitude = aeroportData.longitude;
-    aeroportModifie.latitude = aeroportData.latitude;
-    aeroportModifie.altitude = aeroportData.altitude;
-    aeroportModifie.capaciteParking = aeroportData.capaciteParking;
-    aeroportModifie.nombreDePistes = aeroportData.nombreDePistes;
+    const aeroportModifier = this.aeroportModifier.value;//nouvelles données venant du formulaire
+
+    const aeroportData: Aeroport = {
+      id: this.aeroportAModifier.id,
+      nom: aeroportModifier.nom,
+      codeIATA: aeroportModifier.codeIATA,
+      longitude: aeroportModifier.longitude,
+      latitude: aeroportModifier.latitude,
+      altitude: aeroportModifier.altitude,
+      capaciteParking: aeroportModifier.capaciteParking,
+      nombreDePistes: aeroportModifier.nombreDePistes,
+      ville: { id: aeroportModifier.ville }
+    };
+
+    console.log(aeroportData);
     // Envoyer une requête PUT à l'API pour mettre à jour l'aéroport
-    this.http.put(`http://localhost:8080/aeroport/modifier/${this.aeroportAModifier.id}`, aeroportModifie)
+    this.http.put(`http://localhost:8080/aeroport/modifier/${this.aeroportAModifier.id}`, aeroportData)
       .subscribe({
         next: (response) => {
           console.log("Aeroport modifié avec succès", response);

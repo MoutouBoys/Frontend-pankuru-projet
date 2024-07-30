@@ -56,12 +56,14 @@
                     <input type="text"  id="nombreDePistes" formControlName="nombreDePistes">
                   </div>
                   <div class="margin-top-div">
-                      <label for="ville.id">Nom Ville :</label>
-                      <select id="ville.id" formControlName="ville.id" (change)="onVilleChange($event)">
+                      <label for="ville">Nom Ville :</label>
+                    <!--<form [formGroup]="villeForm">-->
+                      <select id="ville"  formControlName="ville" >
                         @for (ville of villes; track ville.id) {
                           <option value="{{ville.id}}">{{ville.nom}}</option>
                         }
                       </select>
+                    <!--</form>-->
                   </div>
               </div>
                 <!--<div class="content-flex-form">

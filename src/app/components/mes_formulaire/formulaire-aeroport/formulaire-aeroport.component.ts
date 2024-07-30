@@ -6,6 +6,8 @@ import { nextTick } from 'process';
 import { response } from 'express';
 import { error } from 'console';
 import { FormsModule } from '@angular/forms';
+import {ActivatedRoute} from "@angular/router";
+import {Aeroport, AeroportService} from "../../mini_components/aeroport/list-aeroport/aeroport.service";
 
 
 
@@ -17,20 +19,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './formulaire-aeroport.component.css'
 })
 export class FormulaireAeroportComponent implements OnInit{
-  private apiUrlVille = "http://localhost:8080/ville/afficher";
-  private apiPostAeroport = "http://localhost:8080/aeroport/ajout";
-  villes : any[] = [];
-  selectedVilleId!: number;
 
-  onVilleChange(event: any) {
-    this.selectedVilleId = event.target.value;
-    console.log('Selected city ID:', this.selectedVilleId);
-    // Use this.selectedVilleId in your component logic
-  }
+  villes: any[] = [];
+  aeroportForm!: FormGroup;
 
-  aeroportForm !: FormGroup
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
-  //villeId!:bigint;
+  constructor(private fb: FormBuilder, private aeroportService: AeroportService) {}
     ngOnInit() {
       this.aeroportForm = this.fb.group({
         nom: [''],
@@ -41,38 +34,44 @@ export class FormulaireAeroportComponent implements OnInit{
         capaciteParking: [''],
         nombreDePistes: [''],
         logoCompagnie: [''],
-        ville: this.fb.group({
-          id: [4]
-        })
+        ville: ['']
       });
 
       //Afficher la liste des villes dans la liste deroulante
-      this.http.get<any[]>(this.apiUrlVille).subscribe((data) => {
+      this.aeroportService.getVille().subscribe((data) => {
         this.villes = data;
-        //console.log(this.villes);
       });
 
     }
 
-    onSubmit() {
-      const aeroportData = this.aeroportForm.value;
 
-      console.log(aeroportData);
+  onSubmit() {
+    const formValues = this.aeroportForm.value;
 
+    const aeroportData: Aeroport = {
+      id: 0,
+      nom: formValues.nom,
+      codeIATA: formValues.codeIATA,
+      longitude: formValues.longitude,
+      latitude: formValues.latitude,
+      altitude: formValues.altitude,
+      capaciteParking: formValues.capaciteParking,
+      nombreDePistes: formValues.nombreDePistes,
+      ville: { id: formValues.ville }
+    };
 
-      this.http.post(this.apiPostAeroport, aeroportData)
-        .subscribe({
-          next: (response) => {
-            console.log("Aeroport ajouté avec succès", response);
-            this.aeroportForm.reset();
-          },
-          error: (error) => {
-            console.error("Erreur lors de l'ajout du de l'aeroport", error);
-          },
-          complete: () => {
-            console.log("Aeroport ajouté avec succès, observable terminé");
-          }
-        });
-    }
+      this.aeroportService.postAeroport(aeroportData).subscribe({
+        next: (response) => {
+          console.log("Aeroport ajouté avec succès", response);
+          this.aeroportForm.reset();
+        },
+        error: (error) => {
+          console.error("Erreur lors de l'ajout de l'aeroport", error);
+        },
+        complete: () => {
+          console.log("Aeroport ajouté avec succès, observable terminé");
+        }
+      });
 
   }
+}
